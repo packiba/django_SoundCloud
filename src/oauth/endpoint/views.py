@@ -1,4 +1,4 @@
-from rest_framework import viewsets, parser, permissions
+from rest_framework import viewsets, parsers, permissions
 
 from .. import serializer
 
@@ -6,8 +6,8 @@ from .. import serializer
 class UserView(viewsets.ModelViewSet):
     """Просмотр и редактирование данных пользователя
     """
-    parser_classes = (parser.MultiPartParser,)
-    serislizer_classes = serializer.UserSerializer
+    parser_classes = (parsers.MultiPartParser,)
+    serializer_classes = serializer.UserSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
